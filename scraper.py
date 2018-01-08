@@ -5,6 +5,7 @@ import lxml
 from lxml import html
 import requests
 import scraperwiki
+import string
 
 ## Read in the FRFD call page
 page = requests.get('http://www.forkedriverfire.com/firecallsstats.htm')
@@ -13,8 +14,12 @@ tree = html.fromstring(page.content)
 ## Select calls from page by XPath
 firecalls = tree.xpath('//div//p/text()')
 
-## Print Scraped Calls
-print 'Fire Calls: ', firecalls
+## Define Data
+data = {
+        'firecalls': 'firecalls'     
+}
+
+print(data)
 
 ## Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['firecalls'], data=firecalls)
+scraperwiki.sqlite.save(unique_keys=['id'], data=data)
