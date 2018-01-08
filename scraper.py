@@ -11,7 +11,10 @@ page = requests.get('http://www.forkedriverfire.com/firecallsstats.htm')
 tree = html.fromstring(page.content)
 
 ## Select calls from page by XPath
-call = tree.xpath('//div//p/text()')
+firecalls = tree.xpath('//div//p/text()')
+
+## Print Scraped Calls
+print 'Fire Calls: ', firecalls
 
 ## Write out to the sqlite database using scraperwiki library
 scraperwiki.sqlite.save(unique_keys=['call'], data=call)
