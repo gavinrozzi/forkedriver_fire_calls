@@ -1,7 +1,8 @@
-## This is a Python scraper that saves Forked River Fire Department calls for service. Copyright (C) 2017 Gavin Rozzi
+## This is a Python scraper that saves Forked River Fire Department calls for service. Copyright (C) 2018 Gavin Rozzi
 
 ## Import dependencies
 import lxml
+from lxml import html
 import requests
 import scraperwiki
 
