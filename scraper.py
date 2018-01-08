@@ -14,5 +14,9 @@ tree = html.fromstring(page.content)
 call = tree.xpath('//div//p/text()')
 
 ## Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['Forked River Fire Calls'], data={"call"})
+
+
+scraperwiki.sqlite.save(data={"call"})
+
+
 
