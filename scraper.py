@@ -5,7 +5,6 @@ import lxml
 from lxml import html
 import requests
 import scraperwiki
-import string
 
 ## Read in the FRFD call page
 page = requests.get('http://www.forkedriverfire.com/firecallsstats.htm')
@@ -19,7 +18,7 @@ data = {
         'firecalls': 'firecalls'     
 }
 
-print(data)
+print data
 
 ## Write out to the sqlite database using scraperwiki library
 scraperwiki.sqlite.save(unique_keys=['id'], data=data)
