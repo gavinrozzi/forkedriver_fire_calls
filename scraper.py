@@ -18,7 +18,6 @@ firecalls = tree.xpath('//div//p/text()')
 data = {
         'firecalls': 'firecalls'     
 }
-timestamp = date_parse(u"%s %s" % (date, time))
 print data
 
 ## Write out to the sqlite database using scraperwiki library
