@@ -22,4 +22,4 @@ timestamp = date_parse(u"%s %s" % (date, time))
 print data
 
 ## Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['timestamp'], data={"firecalls"})
+scraperwiki.sqlite.save(unique_keys=['firecalls'], data={"firecalls"})
