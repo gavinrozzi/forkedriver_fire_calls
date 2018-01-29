@@ -6,7 +6,7 @@ import lxml
 from lxml import html
 import requests
 import scraperwiki
-
+from dateutil.parser import parse as date_parse
 ## Read in the FRFD call page
 page = requests.get('http://www.forkedriverfire.com/firecallsstats.htm')
 tree = html.fromstring(page.content)
