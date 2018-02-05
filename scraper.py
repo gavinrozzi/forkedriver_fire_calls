@@ -15,4 +15,4 @@ tree = html.fromstring(page.content)
 firecalls = tree.xpath('//div//p/text()')
 
 ## Write out to the sqlite database using scraperwiki library
-scraperwiki.datastore.save(["firecalls"])
+scraperwiki.sqlite.save_var('firecalls') 
